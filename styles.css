@@ -10,7 +10,7 @@ header {
     padding: 10px 20px;
 }
 
-header-content {
+.header-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
