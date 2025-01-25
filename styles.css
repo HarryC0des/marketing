@@ -42,6 +42,10 @@ header nav a:hover {
     color: black;
 }
 
+.header-text {
+    max-width: 40%;
+}
+
 .header-section {
     text-align: center;
     padding: 50px 20px;
@@ -127,6 +131,10 @@ header nav a:hover {
         max-width: 1200px;
         margin: 0 auto;
         text-align: left;
+    }
+
+    h1 {
+        font-size: 36px;
     }
 
     .header-section h1,
