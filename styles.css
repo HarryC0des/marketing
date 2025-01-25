@@ -52,7 +52,7 @@ header nav a:hover {
 .tiles {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     padding: 35px;
 }
 
@@ -66,6 +66,9 @@ header nav a:hover {
     text-decoration: none;
     color: inherit;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; /* Added */
+    flex-direction: column; /* Added */
+    justify-content: center; /* Added */
 }
 
 .tile:hover {
