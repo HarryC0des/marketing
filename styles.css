@@ -75,7 +75,7 @@ header nav a:hover {
     justify-content: center; /* Added to vertically align contents */
     text-transform: uppercase;
     font-weight: 300;
-    border: 2px solid #909090; /* Ensure border is defined */
+    border: 2px solid #333; /* Ensure border is defined */
     transition: border-color 0.3s, color 0.3s; /* Smooth transition */
     text-align: center;
     padding: 20px;
@@ -174,7 +174,7 @@ header nav a:hover {
 }
 
 footer {
-    background-color: black; /* Black background */
+    background-color: #333; /* Black background */
     color: white; /* White text */
     padding: 20px 0;
     text-align: center;
