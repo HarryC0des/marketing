@@ -171,3 +171,28 @@ header nav a:hover {
         text-transform: uppercase; 
        }
 }
+
+footer {
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .footer-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer nav a {
+    color: white; /* White text for links */
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer nav a:hover {
+    color: #000000; /* Light grey text on hover */
+    background-color: white;
+}
