@@ -25,6 +25,7 @@ header {
 header .logo {
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 header nav a {
@@ -63,7 +64,7 @@ header nav a:hover {
     text-align: center;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     text-decoration: none;
