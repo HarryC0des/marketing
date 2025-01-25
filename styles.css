@@ -71,7 +71,7 @@ header nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    vertical-align: center;
+    justify-content: center; /* Added to vertically align contents */
     text-transform: uppercase;
     font-weight: 300;
     border: 2px solid #909090; /* Ensure border is defined */
@@ -168,6 +168,6 @@ header nav a:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-transform: uppercase;
-    }
+        text-transform: uppercase; 
+       }
 }
