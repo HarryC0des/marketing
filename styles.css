@@ -91,7 +91,7 @@ header nav a:hover {
 .tile p{
     text-transform: uppercase;
     font-size: 24px;
-    bottom-margin: 0px;
+    margin-bottom: 0px;
 }
 
 .tile:hover {
