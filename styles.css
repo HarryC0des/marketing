@@ -27,14 +27,15 @@ header .logo {
     font-weight: bold;
 }
 
-header .logo a{
+.header-content .logo a{
     text-decoration: none;
+    color: white;
 }
 
 header nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 20px;
 }
 
 header nav a:hover {
