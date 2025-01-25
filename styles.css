@@ -54,6 +54,9 @@ header nav a:hover {
     flex-direction: row;
     justify-content: space-around;
     padding: 35px;
+    max-width: 1240px; /* Added */
+    margin: 0 auto; /* Center the container */
+    gap: 2%; /* Added for relative spacing */
 }
 
 .tile {
@@ -66,9 +69,11 @@ header nav a:hover {
     text-decoration: none;
     color: inherit;
     transition: transform 0.3s, box-shadow 0.3s;
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
-    justify-content: center; /* Added */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1; /* Added to make tiles flexible */
+    margin: 1%; /* Added for relative spacing */
 }
 
 .tile:hover {
