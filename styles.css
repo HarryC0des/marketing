@@ -206,6 +206,7 @@ footer nav a:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 0px 25px;
 }
 
 .portfolio-tile{
@@ -213,4 +214,9 @@ footer nav a:hover {
     flex-direction: column;
     border-radius: 10px 10px 0 0;
     border:#333 2px solid;
+}
+
+.portfolio-tile-holder img{
+    max-width: 300px;
+    border-radius: 10px 10px 0 0;
 }
