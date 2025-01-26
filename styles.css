@@ -201,3 +201,16 @@ footer nav a:hover {
     color: #000000; /* Light grey text on hover */
     background-color: white;
 }
+
+.portfolio-tile-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.portfolio-tile{
+    display:flex;
+    flex-direction: column;
+    border-radius: 10px 10px 0 0;
+    border:#333 2px solid;
+}
