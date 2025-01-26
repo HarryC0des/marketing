@@ -212,15 +212,20 @@ footer nav a:hover {
 .portfolio-tile{
     display:flex;
     flex-direction: column;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
     border:#333 2px solid;
     max-width: 300px;
     text-decoration: none;
     color: black;
-    padding:0px 15px;
+    margin:0px 15px;
 }
 
 .portfolio-tile-holder img{
     max-width: 300px;
     border-radius: 10px 10px 0 0;
+}
+
+.portfolio-text{
+    text-decoration: none;
+    padding: 5px 0;
 }
