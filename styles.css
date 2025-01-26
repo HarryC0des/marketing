@@ -223,6 +223,8 @@ footer nav a:hover {
     text-decoration: none;
     color: black;
     margin:0px 15px;
+    transition: border-color 0.3s, color 0.3s; /* Smooth transition */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .portfolio-tile-holder img{
