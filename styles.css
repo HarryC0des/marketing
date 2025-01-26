@@ -241,3 +241,18 @@ footer nav a:hover {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     border-color: blue; /* Change border color on hover */
 }
+
+@media (max-width: 600px) {
+    .portfolio-tile-holder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
