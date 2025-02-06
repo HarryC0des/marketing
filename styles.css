@@ -250,6 +250,7 @@ footer nav a:hover {
     display: flex;
     flex-direction: row;
     align-content: space-between;
+    padding: auto, 15px;
 }
 
 .services-container img{
