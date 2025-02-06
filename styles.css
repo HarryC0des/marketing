@@ -249,6 +249,7 @@ footer nav a:hover {
 .services-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .services-container img{
