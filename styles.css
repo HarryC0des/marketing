@@ -246,6 +246,29 @@ footer nav a:hover {
     border-color: blue; /* Change border color on hover */
 }
 
+.services-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.services-container img{
+    max-width: 100px;
+}
+
+.services-item{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.services-item h3{
+    text-transform: capitalize;
+}
+
+
+
+
+
 @media (max-width: 600px) {
     .portfolio-tile-holder {
         display: flex;
