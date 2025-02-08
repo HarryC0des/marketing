@@ -33,5 +33,4 @@ async function loadComponent(id, file, cacheDuration = 86400) {
 window.onload = () => {
     loadComponent("header", "header.html");
     loadComponent("footer", "footer.html");
-    loadComponent("head", "head.html");
 };
