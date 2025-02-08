@@ -7,4 +7,5 @@ async function loadComponent(id, file) {
 window.onload = () => {
     loadComponent("header", "header.html");
     loadComponent("footer", "footer.html");
+    loadComponent("head", "head.html");
 };
