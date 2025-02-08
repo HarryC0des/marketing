@@ -251,22 +251,33 @@ footer nav a:hover {
 .services-container{
     display: flex;
     flex-direction: row;
-    align-content: space-between;
-    padding: auto, 15px;
+    justify-content: center;
+    padding: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .services-container img{
     max-width: 100px;
+    align-self: center;
 }
 
 .services-item{
     display: flex;
     flex-direction: column;
-    align-content: center;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
 }
 
 .services-item h3{
-    text-transform: capitalize;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.services-item p{
+    margin-top: 10px;
 }
 
 
