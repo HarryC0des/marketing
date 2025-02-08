@@ -16,6 +16,7 @@ header {
     justify-content: center;
     justify-items: center;
     padding: 10px;
+    min-height: 50px;
 }
 
 .header-content {
