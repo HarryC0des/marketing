@@ -279,9 +279,25 @@ footer nav a:hover {
 
 .services-item p{
     margin-top: 10px;
+    max-width: 160px;
 }
 
+.CTA-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
 
+.CTA-footer h3{
+    margin: 25px;
+    text-align: center;
+    color: black;
+}
+
+.CTA-footer button{
+    align-self: center;
+}
 
 
 
