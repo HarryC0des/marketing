@@ -49,6 +49,17 @@ header nav a:hover {
     color: black;
 }
 
+button{
+    background-color: #000000;
+    color: white;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .header-text {
     max-width: 40%;
 }
@@ -295,8 +306,9 @@ footer nav a:hover {
     color: black;
 }
 
-.CTA-footer button{
+.CTA-footer a{
     align-self: center;
+    margin: auto;
 }
 
 
