@@ -252,13 +252,15 @@ footer nav a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0 auto;
     margin-top: 25px;
+}
+
+.services-container:last-of-type{
     margin-bottom: 25px;
 }
 
 .services-container img{
-    max-width: 100px;
+    max-width: 75px;
     align-self: center;
 }
 
@@ -266,14 +268,13 @@ footer nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0 2.5%;
     text-align: center;
 }
 
 .services-item h3{
     text-transform: uppercase;
     font-weight: 600;
-    margin-bottom: 0;
 }
 
 .services-item p{
@@ -301,5 +302,9 @@ footer nav a:hover {
 
     .portfolio-tile-holder img{
         max-width: 90%; /*Not right - Need to come back and adjust to make image consistent with width of box*/
+    }
+
+    .services-container{
+        flex-direction: column;
     }
 }
