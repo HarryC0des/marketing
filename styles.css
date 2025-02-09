@@ -298,6 +298,7 @@ footer nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    margin-bottom: 30px;
 }
 
 .CTA-footer h3{
@@ -310,8 +311,6 @@ footer nav a:hover {
     align-self: center;
     margin: auto;
 }
-
-
 
 @media (max-width: 600px) {
     .portfolio-tile-holder {
