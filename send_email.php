@@ -1,27 +1,27 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "contact@harrywahl.com"; // Replace with your actual email
-    $subject = "New Contact Form Submission";
+$apiKey = '814dff8c217e4e5bd1a8dc82da419894-1654a412-687ae6ff';
+$domain = 'harrywahl.com';
 
-    $name = htmlspecialchars($_POST["name"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $message = htmlspecialchars($_POST["message"]);
+$data = [
+    'from'    => 'Website Form <ContactForm@harrywahl.com>',
+    'to'      => 'contact@harrywahl.com',
+    'subject' => 'New Contact Form Submission',
+    'text'    => "Name: {$_POST['name']}\nEmail: {$_POST['email']}\nMessage: {$_POST['message']}"
+];
 
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, "https://api.mailgun.net/v3/$domain/messages");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_USERPWD, "api:$apiKey");
 
-    $email_body = "You have received a new message from your contact form.\n\n";
-    $email_body .= "Name: $name\n";
-    $email_body .= "Email: $email\n";
-    $email_body .= "Message:\n$message\n";
+$response = curl_exec($ch);
+curl_close($ch);
 
-    if (mail($to, $subject, $email_body, $headers)) {
-        echo "Your message has been sent successfully!";
-    } else {
-        echo "Sorry, something went wrong. Please try again later.";
-    }
+if ($response === FALSE) {
+    echo 'Error sending email.';
 } else {
-    echo "Invalid request.";
+    echo 'Email sent successfully!';
 }
 ?>
