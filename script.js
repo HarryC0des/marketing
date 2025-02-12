@@ -35,7 +35,7 @@ async function loadComponent(id, file, cacheDuration = 86400, useSessionStorage 
 }
 
 
-function initializeMobileMenu() {
+document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav");
 
@@ -44,10 +44,9 @@ function initializeMobileMenu() {
             nav.classList.toggle("active");
         });
     }
-}
+});
 
 window.onload = async () => {
-    await loadComponent("header", "header.html");
     await loadComponent("footer", "footer.html");
     initializeMobileMenu();
 };

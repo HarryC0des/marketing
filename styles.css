@@ -380,8 +380,17 @@ textarea {
         padding: 10px 0;
     }
 
-    .nav.active {
-        display: flex; /* Show menu when toggled */
+    .nav.active{
+        display: flex;
+        flex: column;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .nav.active a{
+        font-size: 30px;
+        padding-top: 25px;
+        padding-bottom: 25px;
     }
 
     .menu-toggle {
@@ -391,6 +400,7 @@ textarea {
         color: white;
         font-size: 24px;
         cursor: pointer;
+        margin-bottom: 0;
     }
   
 }
