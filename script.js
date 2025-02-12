@@ -40,15 +40,17 @@ function initializeMobileMenu() {
     const menuToggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav");
 
-    if (menuToggle && navLinks) {
+    if (menuToggle && nav) {
         menuToggle.addEventListener("click", function () {
             nav.classList.toggle("active");
         });
     }
 }
 
-window.onload = () => {
-    loadComponent("header", "header.html");
-    loadComponent("footer", "footer.html");
+window.onload = async () => {
+    await loadComponent("header", "header.html");
+    await loadComponent("footer", "footer.html");
+    initializeMobileMenu(); // Initialize mobile menu after loading header
 };
+
 
