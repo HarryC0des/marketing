@@ -403,4 +403,7 @@ textarea {
         margin-bottom: 0;
     }
   
+    .footer-nav{
+        display: none;
+    }
 }
