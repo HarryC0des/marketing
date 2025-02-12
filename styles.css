@@ -360,4 +360,36 @@ textarea {
     .services-container{
         flex-direction: column;
     }
+    header .nav a{
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #444;
+    }
+
+    /* Show nav when active */
+        header .nav a.active {
+        display: block;
+  }
+
+  /* Menu button */
+    .menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+  
 }

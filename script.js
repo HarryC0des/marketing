@@ -27,9 +27,23 @@ async function loadComponent(id, file, cacheDuration = 86400, useSessionStorage 
         // Store in storage with timestamp
         storage.setItem(cacheKey, content);
         storage.setItem(cacheTimeKey, now);
+
     } catch (error) {
         console.error(`Error loading ${file}:`, error);
         container.innerHTML = `<p>Error loading ${file}</p>`;
+    }
+}
+
+
+// Function to initialize mobile menu after header is loaded
+function initializeMobileMenu() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            nav.classList.toggle("active");
+        });
     }
 }
 
