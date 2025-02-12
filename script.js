@@ -35,7 +35,6 @@ async function loadComponent(id, file, cacheDuration = 86400, useSessionStorage 
 }
 
 
-// Function to initialize mobile menu after header is loaded
 function initializeMobileMenu() {
     const menuToggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav");
@@ -50,7 +49,7 @@ function initializeMobileMenu() {
 window.onload = async () => {
     await loadComponent("header", "header.html");
     await loadComponent("footer", "footer.html");
-    initializeMobileMenu(); // Initialize mobile menu after loading header
+    initializeMobileMenu();
 };
 
 

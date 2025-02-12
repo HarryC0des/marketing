@@ -338,6 +338,13 @@ textarea {
     resize: vertical;
 }
 
+/* Ensure the menu button is hidden on larger screens */
+@media (min-width: 600px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
 @media (max-width: 600px) {
     .portfolio-tile-holder {
         display: flex;
@@ -360,36 +367,30 @@ textarea {
     .services-container{
         flex-direction: column;
     }
-    header .nav a{
+
+    .nav {
         display: none;
+        flex-direction: column;
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
         background: #444;
+        text-align: center;
+        padding: 10px 0;
     }
 
-    /* Show nav when active */
-        header .nav a.active {
-        display: block;
-  }
+    .nav.active {
+        display: flex; /* Show menu when toggled */
+    }
 
-  /* Menu button */
     .menu-toggle {
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav {
-    width: 100%;
-  }
+        display: block; /* Show the menu button in mobile */
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
   
 }
