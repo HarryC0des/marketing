@@ -46,6 +46,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent default submission
+
+            grecaptcha.ready(function () {
+                grecaptcha.execute("6LdKgtYqAAAAANjSuRNnfe7z6sNEfy9ZGdB7Bfi3", { action: "submit" }).then(async function (token) {
+                    // Add the reCAPTCHA token to the form
+                    document.getElementById("recaptcha-token").value = token;
+
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const formObject = {};
+                    formData.forEach((value, key) => {
+                        formObject[key] = value;
+                    });
+
+                    try {
+                        // Send data to Google Apps Script
+                        const response = await fetch("https://script.google.com/macros/s/AKfycbyIRcBmx3135Zt-fZpOzyNhUuMqf8eRv0uumhxViDnNh4bxpdhckpKhI-saKwgAkbc/exec", {
+                            method: "POST",
+                            body: JSON.stringify(formObject),
+                            headers: { "Content-Type": "application/json" }
+                        });
+
+                        const result = await response.text();
+                        alert(result); // Show response message
+                    } catch (error) {
+                        console.error("Form submission failed:", error);
+                        alert("Error submitting form. Please try again.");
+                    }
+                });
+            });
+        });
+    }
+});
+
+
 window.onload = async () => {
     await loadComponent("footer", "footer.html");
     initializeMobileMenu();
