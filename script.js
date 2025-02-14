@@ -34,7 +34,6 @@ async function loadComponent(id, file, cacheDuration = 86400, useSessionStorage 
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav");
@@ -59,22 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("recaptcha-token").value = token;
 
                     // Get form data
-                    const formData = new FormData(contactForm);
-                    const formObject = {};
-                    formData.forEach((value, key) => {
-                        formObject[key] = value;
-                    });
+                    const formData = new FormData(contactForm); // Use FormData directly
 
                     try {
                         // Send data to Google Apps Script
-                        const response = await fetch("https://script.google.com/macros/s/AKfycbyIRcBmx3135Zt-fZpOzyNhUuMqf8eRv0uumhxViDnNh4bxpdhckpKhI-saKwgAkbc/exec", {
+                        await fetch("https://script.google.com/macros/s/AKfycbyIRcBmx3135Zt-fZpOzyNhUuMqf8eRv0uumhxViDnNh4bxpdhckpKhI-saKwgAkbc/exec", {
                             method: "POST",
-                            body: JSON.stringify(formObject),
-                            headers: { "Content-Type": "application/json" }
+                            body: formData, // Send FormData directly
+                            mode: "no-cors" // Prevents preflight OPTIONS request
                         });
 
-                        const result = await response.text();
-                        alert(result); // Show response message
+                        alert("Form submitted successfully!"); // No response due to no-cors mode
                     } catch (error) {
                         console.error("Form submission failed:", error);
                         alert("Error submitting form. Please try again.");
@@ -85,10 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
 window.onload = async () => {
     await loadComponent("footer", "footer.html");
     initializeMobileMenu();
 };
-
 
