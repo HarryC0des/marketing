@@ -95,7 +95,7 @@ async function submitForm() {
 }
 
 try {
-    const response = await fetch("https://script.google.com/macros/s/YOUR_NEW_DEPLOYMENT_ID/exec", {
+    const response = await fetch("https://script.google.com/macros/library/d/1pFKX1IPJN_LpAoo7-iZanZvDTbfeoxAa8OhEOuEZ7pN-kdsLOUrFdsNc/3", {
         method: "GET",
         mode: "cors" // Allow cross-origin request
     });
