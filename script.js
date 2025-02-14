@@ -79,6 +79,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent default submission
+            submitForm();
+        });
+    }
+});
+
+async function submitForm() {
+    console.log("Form submitted!");
+}
+
 try {
     const response = await fetch("https://script.google.com/macros/s/YOUR_NEW_DEPLOYMENT_ID/exec", {
         method: "GET",
