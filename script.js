@@ -79,6 +79,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+try {
+    const response = await fetch("https://script.google.com/macros/s/YOUR_NEW_DEPLOYMENT_ID/exec", {
+        method: "GET",
+        mode: "cors" // Allow cross-origin request
+    });
+
+    const result = await response.text();
+    console.log("Response:", result);
+} catch (error) {
+    console.error("Error:", error);
+}
+
 window.onload = async () => {
     await loadComponent("footer", "footer.html");
     initializeMobileMenu();
