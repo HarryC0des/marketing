@@ -45,67 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contact-form");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", async function (event) {
-            event.preventDefault(); // Prevent default submission
-
-            grecaptcha.ready(function () {
-                grecaptcha.execute("6LdKgtYqAAAAANjSuRNnfe7z6sNEfy9ZGdB7Bfi3", { action: "submit" }).then(async function (token) {
-                    // Add the reCAPTCHA token to the form
-                    document.getElementById("recaptcha-token").value = token;
-
-                    // Get form data
-                    const formData = new FormData(contactForm); // Use FormData directly
-
-                    try {
-                        // Send data to Google Apps Script
-                        await fetch("https://script.google.com/macros/s/AKfycbyIRcBmx3135Zt-fZpOzyNhUuMqf8eRv0uumhxViDnNh4bxpdhckpKhI-saKwgAkbc/exec", {
-                            method: "POST",
-                            body: formData, // Send FormData directly
-                            mode: "no-cors" // Prevents preflight OPTIONS request
-                        });
-
-                        alert("Form submitted successfully!"); // No response due to no-cors mode
-                    } catch (error) {
-                        console.error("Form submission failed:", error);
-                        alert("Error submitting form. Please try again.");
-                    }
-                });
-            });
-        });
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contact-form");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", async function (event) {
-            event.preventDefault(); // Prevent default submission
-            submitForm();
-        });
-    }
-});
-
-async function submitForm() {
-    console.log("Form submitted!");
-}
-
-try {
-    const response = await fetch("https://script.google.com/macros/library/d/1pFKX1IPJN_LpAoo7-iZanZvDTbfeoxAa8OhEOuEZ7pN-kdsLOUrFdsNc/3", {
-        method: "GET",
-        mode: "cors" // Allow cross-origin request
-    });
-
-    const result = await response.text();
-    console.log("Response:", result);
-} catch (error) {
-    console.error("Error:", error);
-}
-
 window.onload = async () => {
     await loadComponent("footer", "footer.html");
     initializeMobileMenu();
