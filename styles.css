@@ -342,10 +342,11 @@ footer nav a:hover {
     }
 
     .services-item p{
-        display: flex;
         align-self: center;
         margin: auto;
         padding: 20px 0;
+        max-width: 100%;
+        text-align: center;
     }
 }
 
