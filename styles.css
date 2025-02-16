@@ -1,8 +1,11 @@
+
 body {
     font-family: 'Source Sans Pro', Arial, sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    display: flex;
+    flex-direction: column;
 }
 
 p{
@@ -11,6 +14,7 @@ p{
 
 .container {
     margin: 20px; 
+    flex: 1;
 }
 
 header {
@@ -450,4 +454,24 @@ textarea {
     .footer-nav{
         display: none;
     }
+}
+
+/*PROJECTS STYLING STARTS HERE*/
+.task-container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 20px 0;
+}
+
+.task-container input{
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.task-list ul{
+    /*FIND OUT HOW TO STYLE LISTS*/
 }
