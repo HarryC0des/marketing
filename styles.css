@@ -473,14 +473,13 @@ textarea {
 }
 
 .task-container ul{
-    border: 1px solid black;
-    border-radius: 10px;
     list-style: none;
 }
 
 .task-container li button{
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: 15px;
 }
 
 .completed {
@@ -492,7 +491,14 @@ textarea {
 }
 
 #taskList li{
-    padding-right: 40px;
+    padding: 0 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
 }
 
 #taskList:not(:empty){
