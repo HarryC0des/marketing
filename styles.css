@@ -472,6 +472,29 @@ textarea {
     padding: 10px;
 }
 
-.task-list ul{
-    /*FIND OUT HOW TO STYLE LISTS*/
+.task-container ul{
+    border: 1px solid black;
+    border-radius: 10px;
+    list-style: none;
+}
+
+.task-container li button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+#taskList{
+    display: none;
+}
+
+#taskList li{
+    padding-right: 40px;
+}
+
+#taskList:not(:empty){
+    display: block;
 }
