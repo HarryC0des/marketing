@@ -6,8 +6,24 @@ function addTask() {
     
     if (!task) return;  // Prevent adding empty tasks
 
-    let li = document.createElement("li"); // ✅ Make sure it's a valid Node
-    li.textContent = task; 
+    let li = document.createElement("li"); 
+    let span = document.createElement("span"); // Create a span for text
+    span.textContent = task;
+    span.classList.add("task-text"); // Add class for styling
+    li.appendChild(span); 
+
+    let doneBtn = document.createElement("button");
+    doneBtn.textContent = "✔";
+    doneBtn.onclick = function(){
+        span.classList.add("task-completed");
+        saveTasks();
+    }
+
+    li.appendChild(doneBtn);
+    document.getElementById("taskList").appendChild(li);
+
+    input.value="";
+    saveTasks();
 
     let deleteBtn = document.createElement("button"); // ✅ Create button properly
     deleteBtn.textContent = "❌";
@@ -20,11 +36,6 @@ function addTask() {
     document.getElementById("taskList").appendChild(li);  // ✅ Ensure li is a Node
     
     input.value = ""; // Clear input after adding
-    saveTasks();
-}
-
-function toggleTask(event){
-    event.target.classList.toggle("completed");
     saveTasks();
 }
 
@@ -43,10 +54,11 @@ function saveTasks(){
 function loadTasks() {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks.forEach(({ text, completed }) => {
-        let li = document.createElement("li");
-        li.textContent = text;
-        if (completed) li.classList.add("completed");
-        li.addEventListener("click", toggleTask);
+        let li = document.createElement("li"); 
+        let span = document.createElement("span"); // Create a span for text
+        span.textContent = task;
+        span.classList.add("task-text"); // Add class for styling
+        li.appendChild(span); 
 
         let deleteBtn = document.createElement("button");
         deleteBtn.textContent = "❌";
