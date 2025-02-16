@@ -477,9 +477,7 @@ textarea {
 }
 
 .task-container li button{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 15px;
+    margin-bottom: 0;
 }
 
 .completed {
@@ -491,7 +489,7 @@ textarea {
 }
 
 #taskList li{
-    padding: 0 30px;
+    padding: 10px 30px;
     border: 1px solid black;
     border-radius: 10px;
     display: flex;
@@ -499,8 +497,14 @@ textarea {
     align-content: center;
     justify-content: center;
     vertical-align: middle;
+    margin-bottom: 20px;
 }
 
 #taskList:not(:empty){
     display: block;
+}
+
+.task-input-button{
+    display: flex;
+    flex-direction: row;
 }
