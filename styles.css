@@ -479,6 +479,12 @@ textarea {
 
 .task-container li button{
     margin-bottom: 0;
+    max-height: 45px;
+    align-self: center;
+}
+
+#taskList li button:first-of-type{
+    margin-right: 10px;
 }
 
 .completed {
@@ -501,6 +507,7 @@ textarea {
     margin-bottom: 20px;
 }
 
+
 #taskList:not(:empty){
     display: block;
 }
@@ -508,4 +515,16 @@ textarea {
 .task-input-button{
     display: flex;
     flex-direction: row;
+}
+
+.task-text{
+    justify-self: center;
+    align-self: center;
+    flex: 1;
+    padding-right: 15px;
+}
+
+.task-completed{
+    color: gray;
+    text-decoration: line-through;
 }
