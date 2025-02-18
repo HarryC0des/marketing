@@ -15,7 +15,7 @@ function addTask() {
     let doneBtn = document.createElement("button");
     doneBtn.textContent = "✔";
     doneBtn.onclick = function(){
-        span.classList.add("task-completed");
+        span.classList.toggle("task-completed");
         saveTasks();
     }
 

@@ -522,9 +522,44 @@ textarea {
     align-self: center;
     flex: 1;
     padding-right: 15px;
+    font-size: 1.25em;
 }
 
 .task-completed{
     color: gray;
     text-decoration: line-through;
+}
+
+ul#taskList{
+    padding-inline-start: 0px;
+}
+
+@media (max-width:600px) {
+    .task-container{
+        width: 100%;
+    }
+    
+    .task-input-button{
+        flex-direction: column;
+    }
+
+    ul#taskList {
+        padding-inline-start: 0px;
+        min-width: 100%;
+    }
+
+    #taskList li{
+        flex-direction:column;
+    }
+
+    #taskList li button:first-of-type{
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .task-text{
+        padding-right: 0;
+        padding-bottom: 10px;
+        font-size: 1.25em;
+    }
 }
