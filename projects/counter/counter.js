@@ -7,6 +7,10 @@ function counterTally() {
     let number = document.getElementById("counter");
     let random = document.getElementById("randBtn");
 
+    let initialRand = Math.round(Math.random()*10);
+    number.textContent = initialRand;
+    trueOrFalse();
+
     plus.addEventListener("click", function(){
         let tally = parseInt(number.textContent);
         number.textContent = tally + 1;
