@@ -45,8 +45,15 @@ function trueOrFalse(){
 function createQuote(){
     let quoteBtn = document.getElementById("quoteBtn");
     let quoteHolder = document.getElementById("quoteHolder");
+    const quoteArray = ["I think, therefore I am", 
+        "The unexamined life is not worth living",
+        "One cannot step twice in the same river.",
+        "The price of greatness is responsibility.",
+        "This is another quote that is not as good"]
 
     quoteBtn.addEventListener("click", function(){
-        quoteHolder.textContent = "This is a quote."
+        let randArray = Math.floor(Math.random()*quoteArray.length);
+        
+        quoteHolder.textContent = quoteArray[Math.round(randArray)];
     })
 }
