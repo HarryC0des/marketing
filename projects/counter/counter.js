@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded",counterTally);
 document.addEventListener("DOMContentLoaded",trueOrFalse);
+document.addEventListener("DOMContentLoaded", createQuote);
 
 function counterTally() {
     let plus = document.getElementById("plusBtn");
@@ -39,4 +40,13 @@ function trueOrFalse(){
     } else {
         response.textContent = "Your number is smaller than 5!";
     }
+}
+
+function createQuote(){
+    let quoteBtn = document.getElementById("quoteBtn");
+    let quoteHolder = document.getElementById("quoteHolder");
+
+    quoteBtn.addEventListener("click", function(){
+        quoteHolder.textContent = "This is a quote."
+    })
 }
