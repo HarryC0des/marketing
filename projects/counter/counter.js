@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded",counterTally);
 document.addEventListener("DOMContentLoaded",trueOrFalse);
 document.addEventListener("DOMContentLoaded", createQuote);
+document.addEventListener("DOMContentLoaded",rockPaper);
 
 function counterTally() {
     let plus = document.getElementById("plusBtn");
@@ -56,4 +57,36 @@ function createQuote(){
         
         quoteHolder.textContent = quoteArray[Math.round(randArray)];
     })
+}
+
+function rockPaper(){
+    let rockBtn = document.getElementById("rockBtn");
+    let paperBtn = document.getElementById("paperBtn");
+    let scissorBtn = document.getElementById("ScissorBtn");
+    let result = document.getElementById("rockPaperResult");
+    let robotChoice = document.getElementById("rockPaperRobot");
+
+    const gameOptions = ["Rock", "Paper", "Scissors"];
+
+    function playGame(playerChoice) {
+        let robotRound = Math.floor(Math.random() * gameOptions.length);
+        let robotPick = gameOptions[robotRound]; // Store the randomly chosen move
+        robotChoice.textContent = robotPick; // Display the robot's choice
+
+        if (robotPick === playerChoice) {
+            result.textContent = "It's a draw!";
+        } else if (
+            (playerChoice === "Rock" && robotPick === "Scissors") ||
+            (playerChoice === "Paper" && robotPick === "Rock") ||
+            (playerChoice === "Scissors" && robotPick === "Paper")
+        ) {
+            result.textContent = "Yay - You won!";
+        } else {
+            result.textContent = "Sorry - You lost!";
+        }
+    }
+
+    rockBtn.addEventListener("click", function(){ playGame("Rock"); });
+    paperBtn.addEventListener("click", function(){ playGame("Paper"); });
+    scissorBtn.addEventListener("click", function(){ playGame("Scissors"); });
 }
