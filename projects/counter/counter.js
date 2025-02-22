@@ -65,6 +65,8 @@ function rockPaper(){
     let scissorBtn = document.getElementById("ScissorBtn");
     let result = document.getElementById("rockPaperResult");
     let robotChoice = document.getElementById("rockPaperRobot");
+    let myScore = document.getElementById("myScore");
+    let robotScore = document.getElementById("robotScore");
 
     const gameOptions = ["Rock", "Paper", "Scissors"];
 
@@ -81,8 +83,12 @@ function rockPaper(){
             (playerChoice === "Scissors" && robotPick === "Paper")
         ) {
             result.textContent = "Yay - You won!";
+            let score = parseInt(myScore.textContent);
+            myScore.textContent = score + 1;
         } else {
             result.textContent = "Sorry - You lost!";
+            let roboScore = parseInt(robotScore.textContent);
+            robotScore.textContent = roboScore + 1;
         }
     }
 
