@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded",counterTally);
 document.addEventListener("DOMContentLoaded",trueOrFalse);
 document.addEventListener("DOMContentLoaded", createQuote);
 document.addEventListener("DOMContentLoaded",rockPaper);
+document.addEventListener("DOMContentLoaded",colorPicker);
 
 function counterTally() {
     let plus = document.getElementById("plusBtn");
@@ -95,4 +96,18 @@ function rockPaper(){
     rockBtn.addEventListener("click", function(){ playGame("Rock"); });
     paperBtn.addEventListener("click", function(){ playGame("Paper"); });
     scissorBtn.addEventListener("click", function(){ playGame("Scissors"); });
+}
+
+function colorPicker(){
+    let colorValue = document.getElementById("colorPicker");
+    let backgroundColor = document.getElementById("colorPickerContainer");
+    let colorBtn = document.getElementById("colorBtn");
+
+    colorBtn.addEventListener("click", function(){
+        let hexValue = colorValue.value;
+        
+        backgroundColor.style.backgroundColor = hexValue;
+    })
+
+
 }
