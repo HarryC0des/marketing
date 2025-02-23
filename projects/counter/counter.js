@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded",trueOrFalse);
 document.addEventListener("DOMContentLoaded", createQuote);
 document.addEventListener("DOMContentLoaded",rockPaper);
 document.addEventListener("DOMContentLoaded",colorPicker);
+document.addEventListener("DOMContentLoaded", timerCountdown);
 
 function counterTally() {
     let plus = document.getElementById("plusBtn");
@@ -108,6 +109,20 @@ function colorPicker(){
         
         backgroundColor.style.backgroundColor = hexValue;
     })
+}
 
-
+function timerCountdown(){
+    let timer = document.getElementById("timer");
+    let timerBackground = document.getElementById("timerBackground");
+    let count = 5;
+    let interval = setInterval(function(){
+        count -= 1;
+        if (count ==0){
+            clearInterval(interval);
+            timerBackground.style.backgroundColor = "red";
+            timer.textContent = "Your time is up!";
+        } else{
+            timer.textContent=count;
+        }
+    },2000);
 }
