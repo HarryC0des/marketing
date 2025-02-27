@@ -579,3 +579,43 @@ ul#taskList{
     margin: 20px;
     font-size: 30px;
 }
+/* Choose Your Own Adventure */
+#backgroundImage{
+    max-width: 100%;    
+    height: auto;
+}
+
+.game-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.game-visual-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inventory-health-container {
+    padding: 10px 0;
+    inset-inline-start: 10px;
+    background-color: lightgray;
+    width: 100%;
+}
+
+#gameInstructions{
+    padding: 20px 10px 20px 10px;
+    background-color: lightgray;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

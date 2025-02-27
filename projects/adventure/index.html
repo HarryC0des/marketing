@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
         <script src="/script.js"></script>
         <script src="/projects/adventure/adventure.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
 <body>
     <header>
@@ -31,10 +34,17 @@
                 <p>Use the buttons below to choose your own adventure - but be careful, danger is around every corner!</p>
             </div>
             <div class="game-container">
-                <div id="gameInstructions"></div>
+                <div class="game-visual-container">
+                    <img id="backgroundImage" src="" alt="Game Image">                    
+                    <div class="inventory-health-container">
+                        <div id="inventoryDisplay" class="press-start-2p-regular"></div>
+                        <div id="healthDisplay" class="press-start-2p-regular"></div>
+                    </div>              
+                    <div id="gameInstructions" class="press-start-2p-regular"></div>
+                </div>
                 <div class="button-holders">
-                    <button id="choiceA"></button>
-                    <button id="choiceB"></button>
+                    <button id="choiceA" class="press-start-2p-regular"></button>
+                    <button id="choiceB" class="press-start-2p-regular"></button>
                 </div>
             </div>
         </div>
