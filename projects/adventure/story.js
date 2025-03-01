@@ -50,9 +50,17 @@ weekend: new gameChoices(
 
 water: new gameChoices(
     "A coworker is filling up the largest water bottle you've ever seen",
-    "Ask them to hurry up", "hurry",
+    "Tell them to leave some for the fishes", "hurry",
     "cough loudly", "cough",
     [], 0,
+    ""
+),
+
+hurry: new gameChoices(
+    "your coworker stops filling up their bottle and turns to face you",
+    "Apologize", "apology",
+    "Double down on your joke", "joke",
+    [],0,
     ""
 )
 }
