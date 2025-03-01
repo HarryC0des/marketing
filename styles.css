@@ -624,3 +624,9 @@ ul#taskList{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 100px;
 }
+
+.grid{
+    min-width: 100px;
+    min-height: 100px;
+    outline: 1px black;
+}
