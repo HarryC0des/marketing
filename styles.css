@@ -628,5 +628,5 @@ ul#taskList{
 .grid{
     min-width: 100px;
     min-height: 100px;
-    outline: 1px black;
+    border: 1px black;
 }
