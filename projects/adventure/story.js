@@ -46,7 +46,16 @@ weekend: new gameChoices(
     "Take an early lunch", "lunch",
     ["weekend work"], -1,
     ""
+),
+
+water: new gameChoices(
+    "A coworker is filling up the largest water bottle you've ever seen",
+    "Ask them to hurry up", "hurry",
+    "cough loudly", "cough",
+    [], 0,
+    ""
 )
 }
+
 
 export {gameSteps};

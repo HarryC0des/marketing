@@ -7,6 +7,7 @@ let inventory = [];
 
 function progressGame(choice) {
     let nextStep = choice === "A" ? currentStep.choiceA.next:currentStep.choiceB.next;
+    if (!nextStep || !gameSteps[nextStep]) return; // Prevents errors
     currentStep = gameSteps[nextStep];
     currentHealth = currentHealth + currentStep.healthChange;
     inventory = [...inventory,...currentStep.keyobjects];
