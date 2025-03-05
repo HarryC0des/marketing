@@ -3,60 +3,68 @@ import { updateUI } from "./ui";
 let boardChoices = [1,2,3,4,5,6,7,8,9];
 let playerChoices = [];
 let computerChoices = [];
+let gameStatus = "play";
+let turnCount = 1
 
-function playGame() {
-    let gameStatus = "play";
-    let turnCount = 1;
+function playGame(choice) {
 
     function playerTurn(choice){
-        if (choice === "A"){
-            playerChoices = boardChoices.splice(0);
-        } else if (choice === "B"){
-            playerChoices = boardChoices.splice(1);
-        } else if (chocie === "C"){
-            playerChoices = boardChoices.splice(2);
-        }else if(choice === "D"){
-            playerChoices = boardChoices.splice(3);
-        } else if (choice === "E"){
-            playerChoices = boardChoices.splice(4);
-        } else if (choice === "F"){
-            playerChoices = boardChoices.splice(5);
-        }else if (choice === "G"){
-            playerChoices = boardChoices.splice(6);
-        } else if (choice === "H"){
-            playerChoices = boardChoices.splice(7);
+        let mapping = { "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "I": 9 };
+        let value = mapping[choice];
+        let index = boardChoices.indexOf(value);
 
-        } else(playerChoices = boardChoices.splice(8));
+        if (index !== -1) {  
+            playerChoices.push(boardChoices.splice(index, 1)[0]);  
+        } else {
+            console.log("Invalid move! Choose an available spot.");
+        }
 
         return playerChoices;
     }
 
     function computerTurn(){
+        if (boardChoices.length === 0) return;  // Stop if no moves are left
         let randomChoice = Math.floor(Math.random()*boardChoices.length);
-        let computerChoices = boardChoices.splice(randomChoice);
+        computerChoices.push(boardChoices.splice(randomChoice,1)[0]);
 
         return computerChoices;
     }
 
-    function nextTurn(){
-        if(turnCount % 2 === 0){
-            computerTurn();
-        } else {playerTurn();}
+    function arrayCheck(choices,winningChoices){
+        return winningChoices.some(picks =>
+            picks.every(pick => choices.includes(pick))
+        );
+    }
 
-        turnCount++;       
-    };
+    let winningPicks = [
+        [1,2,3],
+        [4,5,6],
+        [7,8,9],
+        [1,4,7],
+        [2,5,8],
+        [3,6,9],
+        [1,5,9],
+        [3,5,7]
+    ];
 
     function winStatus(){
-        if(player );
+        if(arrayCheck(playerChoices,winningPicks)){
+             return "player";
+        } else if(arrayCheck(computerChoices,winningPicks)){
+           return "computer";
+        } return "play";
     }
 
+        if(turnCount % 2 === 0){
+            computerTurn();
+        } else {playerTurn(choice)}
 
-    while(gameStatus === "play"){
-        nextTurn();
-        updateUI();
         gameStatus = winStatus();
-    }
-    return gameStatus;
+        turnCount++;
+        updateUI();
 
+        return gameStatus;
 
 };
+
+export {playGame};
