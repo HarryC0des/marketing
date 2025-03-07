@@ -4,9 +4,7 @@ let boardChoices = [1,2,3,4,5,6,7,8,9];
 let playerChoices = [];
 let computerChoices = [];
 let gameStatus = "play";
-let turnCount = 1
 
-function playGame(choice) {
 
     function playerTurn(choice){
         let mapping = { "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "I": 9 };
@@ -14,7 +12,7 @@ function playGame(choice) {
         let index = boardChoices.indexOf(value);
 
         if (index !== -1) {  
-            playerChoices.push(boardChoices.splice(index, 1)[0]);  
+            playerChoices.push(boardChoices.splice(index, 1)[0]);
         } else {
             console.log("Invalid move! Choose an available spot.");
         }
@@ -25,9 +23,10 @@ function playGame(choice) {
     function computerTurn(){
         if (boardChoices.length === 0) return;  // Stop if no moves are left
         let randomChoice = Math.floor(Math.random()*boardChoices.length);
-        computerChoices.push(boardChoices.splice(randomChoice,1)[0]);
+        let move = boardChoices.splice(randomChoice,1)[0];
+        computerChoices.push(move);
 
-        return computerChoices;
+        return move;
     }
 
     function arrayCheck(choices,winningChoices){
@@ -52,19 +51,32 @@ function playGame(choice) {
              return "player";
         } else if(arrayCheck(computerChoices,winningPicks)){
            return "computer";
+        } else if(boardChoices.length === 0){
+            return "draw"
         } return "play";
     }
 
-        if(turnCount % 2 === 0){
-            computerTurn();
-        } else {playerTurn(choice)}
+        function playGame(choice){
+            if (gameStatus !== "play") return null; // Stop if game is already over
 
-        gameStatus = winStatus();
-        turnCount++;
-        updateUI();
+            let playerMove = null;
+            let computerMove = null;
 
-        return gameStatus;
+            playerMove = choice;
+            playerTurn(choice);
+            gameStatus = winStatus();
+            if (gameStatus !== "play"){
+                updateUI(playerMove, null);
+                return gameStatus
+            }
 
-};
+            computerMove = computerTurn();
+            gameStatus = winStatus();
+            
+
+            updateUI(playerMove,computerMove);
+            return gameStatus
+        }
+
 
 export {playGame};
