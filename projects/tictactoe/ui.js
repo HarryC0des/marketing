@@ -1,6 +1,6 @@
 import { playGame } from "./game";
 
-function updateGame(){
+function updateUI(){
     let {computerMove} = playGame();
     
     let topLeft = document.getElementById("rowOneLeft");
@@ -51,9 +51,8 @@ function updateGame(){
     })
 
     computerMove.style.backgroundColor = "red";
-    
-    return updateGame
 
 }
 
 export {updateUI};
+document.addEventListener("DOMContentLoaded",updateUI);
