@@ -1,7 +1,7 @@
 import { playGame } from "./game";
 
 function updateUI(){
-    let {computerMove} = playGame();
+    let {computerMove, playerMove} = playGame();
     
     let topLeft = document.getElementById("rowOneLeft");
     let topMiddle = document.getElementById("rowOneMiddle");
@@ -15,44 +15,49 @@ function updateUI(){
 
     topLeft.addEventListener("click", function(){
         topLeft.style.backgroundColor = "red";
-        playGame("A");
+        playerMove = function(){playGame("A")};
+        console.log("Top Left Selected");
     })
     topMiddle.addEventListener("click", function(){
         topMiddle.style.backgroundColor = "red";
-        playGame("B");
+        playerMove = playGame("B");
+        console.log("Top Middle Selected");
     })
     topRight.addEventListener("click", function(){
         topRight.style.backgroundColor = "red";
-        playGame("C");
+        playerMove = playGame("C");
+        console.log("Top Right Selected");
     })
     midLeft.addEventListener("click", function(){
         midLeft.style.backgroundColor = "red";
-        playGame("D");
+        playerMove = playGame("D");
     })
     midMiddle.addEventListener("click", function(){
         midMiddle.style.backgroundColor = "red";
-        playGame("E");
+        playerMove = playGame("E");
     })
     midRight.addEventListener("click", function(){
         midRight.style.backgroundColor = "red";
-        playGame("F");
+        playerMove = playGame("F");
     })
     botLeft.addEventListener("click",function(){
         botLeft.style.backgroundColor = "red";
-        playGame("G")
+        playerMove = playGame("G")
     })
     botMiddle.addEventListener("click", function(){
         botMiddle.style.backgroundColor = "red";
-        playGame("H");
+        playerMove = playGame("H");
     })
     botRight.addEventListener("click", function(){
         botRight.style.backgroundColor = "red";
-        playGame("I");
+        playerMove = playGame("I");
     })
 
-    computerMove.style.backgroundColor = "red";
+    
+    let changeColor = computerMove.style.backgroundColor;
+    changeColor = "blue";
 
 }
 
-export {updateUI};
 document.addEventListener("DOMContentLoaded",updateUI);
+export {updateUI};
