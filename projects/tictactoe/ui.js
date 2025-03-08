@@ -1,4 +1,4 @@
-import { playGame } from "./game";
+import { playGame } from "./game.js";
 
 function updateUI(){
     let {computerMove, playerMove} = playGame();
