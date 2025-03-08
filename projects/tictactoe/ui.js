@@ -52,7 +52,7 @@ function updateGame(){
 
     computerMove.style.backgroundColor = "red";
     
-
+    return updateGame
 
 }
 
