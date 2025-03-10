@@ -1,5 +1,3 @@
-
-
 import { updateUI } from "./ui.js";
 
 let boardChoices = [1,2,3,4,5,6,7,8,9];
@@ -15,7 +13,6 @@ function playerTurn(choice){
         if (index !== -1) {
             let picked = boardChoices.splice(index, 1)[0];
             playerChoices.push(picked);
-            console.log("Human " + picked);
         } else {
             console.log("Invalid move! Choose an available spot.");
         }
@@ -27,8 +24,7 @@ function playerTurn(choice){
         if (boardChoices.length === 0) return;  // Stop if no moves are left
         let randomChoice = Math.floor(Math.random()*boardChoices.length);
         let move = boardChoices.splice(randomChoice,1)[0];
-        computerChoices.push("computer "+ move);
-        console.log(move);
+        computerChoices.push(move);
         return move;
     }
 
@@ -61,24 +57,25 @@ function playerTurn(choice){
 
 
     function playGame(choice){
+        console.log("playgame from game script");
         if (gameStatus !== "play") return null; // Stop if game is already over
 
-        let playerMove = null;
-        let computerMove = null;
-
-        playerMove = choice;
+        let playerMove = choice;
         playerTurn(choice);
-        gameStatus = winStatus();
+
+        console.log("player: "+ choice);
+
          if (gameStatus !== "play"){
             updateUI(playerMove, null);
             return gameStatus
         }
 
-        computerMove = computerTurn();
+        let computerMove = computerTurn();
         gameStatus = winStatus();
             
+        console.log(gameStatus);
+        console.log(computerMove);
 
-        updateUI(playerMove,computerMove);
         return computerMove;
         }
 
