@@ -55,6 +55,10 @@ function playerTurn(choice){
         } return "play";
     }
 
+    function checkStatus(){
+        return gameStatus;
+    }
+
 
     function playGame(choice){
         console.log("playgame from game script");
@@ -80,4 +84,4 @@ function playerTurn(choice){
         }
 
 
-export {playGame};
+export {playGame, checkStatus};

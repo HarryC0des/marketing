@@ -1,4 +1,4 @@
-import { playGame } from "./game.js";
+import { playGame, checkStatus } from "./game.js";
 
 function updateUI(){
     let topLeft = document.getElementById("rowOneLeft");
@@ -11,6 +11,7 @@ function updateUI(){
     let botMiddle = document.getElementById("rowThreeCenter");
     let botRight = document.getElementById("rowThreeRight");
 
+    startOverBtn.style.display = "none";
 
     const boardElements = [
         "rowOneLeft", "rowOneCenter", "rowOneRight",
@@ -18,127 +19,134 @@ function updateUI(){
         "rowThreeLeft", "rowThreeCenter", "rowThreeRight"
     ];
 
+    function updateGameStatus(){
+        let status = document.getElementById("gameStatus");
+        let gameStatus = checkStatus();
+        let startOverBtn = document.getElementById("startOverBtn");
+
+        startOverBtn.addEventListener("click", function(){
+            window.location.reload();
+        })
+
+        if(gameStatus === "player"){
+            status.textContent = "Player Wins!";
+            startOverBtn.style.display = "";
+        } else if (gameStatus === "computer"){
+            status.textContent = "Computer Wins!";
+            startOverBtn.style.display = "";
+        } else if (gameStatus === "draw"){
+            status.textContent = "It's a Draw!";
+            startOverBtn.style.display = "";
+        } else status.textContent = "";
+    }
+
     
     topLeft.addEventListener("click", function(){
         console.log("Top Left Selected");
-
-     // Prevent clicking an already selected spot
-        if (topLeft.style.backgroundColor === "red") {
-        console.log("Invalid Move! Spot already taken.");
-        return;
-    }
-
         topLeft.style.backgroundColor = "red";
         let playerMove = "A";
         console.log("playerMove logged");
         let computerMove = playGame(playerMove);
         console.log("computer move logged");
-        if (computerMove === null || computerMove === undefined) {
-            console.log("No computer move possible.");
-            return;
+
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
         }
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+
+        updateGameStatus();
     });
 
     topMiddle.addEventListener("click", function(){
-        if (topMiddle.style.backgroundColor === "red") {
-        console.log("Invalid Move! Spot already taken.");
-        return;
-        }
-
         topMiddle.style.backgroundColor = "red";
         let playerMove = "B";
         let computerMove = playGame(playerMove);
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
+        }
+        updateGameStatus();
     });
     topRight.addEventListener("click", function(){
-        if (topRight.style.backgroundColor === "red") {
-            console.log("Invalid Move! Spot already taken.");
-            return;
-            }
         topRight.style.backgroundColor = "red";
         let playerMove = "C";
         let computerMove = playGame(playerMove);
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
+        }
+        updateGameStatus();
         });
     midLeft.addEventListener("click", function(){
-        if (midLeft.style.backgroundColor === "red") {
-            console.log("Invalid Move! Spot already taken.");
-            return;
-            }
         midLeft.style.backgroundColor = "red";
         let playerMove = "D";        
         let computerMove = playGame(playerMove);
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
+        }
+        updateGameStatus();
     });
     midMiddle.addEventListener("click", function(){
-        if (midMiddle.style.backgroundColor === "red") {
-            console.log("Invalid Move! Spot already taken.");
-            return;
-            }
         midMiddle.style.backgroundColor = "red";
         let playerMove = "E";
         let computerMove = playGame(playerMove);
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
+        }
+        updateGameStatus();
     });
     midRight.addEventListener("click", function(){
-        if (midRight.style.backgroundColor === "red") {
-            console.log("Invalid Move! Spot already taken.");
-            return;
-            }
         midRight.style.backgroundColor = "red";
         let playerMove = "F";
         let computerMove = playGame(playerMove);
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
+        }
+        updateGameStatus();
     });
     botLeft.addEventListener("click",function(){
-        if (botLeft.style.backgroundColor === "red") {
-            console.log("Invalid Move! Spot already taken.");
-            return;
-            }
         botLeft.style.backgroundColor = "red";
         let playerMove = "G";
         let computerMove = playGame(playerMove);
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
+        }
+        updateGameStatus();
     });
     botMiddle.addEventListener("click", function(){
-        if (botMiddle.style.backgroundColor === "red") {
-            console.log("Invalid Move! Spot already taken.");
-            return;
-            }
         botMiddle.style.backgroundColor = "red";
         let playerMove = "H";
         let computerMove = playGame(playerMove);
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
+        }
+        updateGameStatus();
     });
     botRight.addEventListener("click", function(){
-        if (botRight.style.backgroundColor === "red") {
-            console.log("Invalid Move! Spot already taken.");
-            return;
-            }
         botRight.style.backgroundColor = "red";
         let playerMove = "I";
         let computerMove = playGame(playerMove);
-        let elementID = boardElements[computerMove - 1];
-        let computerMoveElement = document.getElementById(elementID);
-        computerMoveElement.style.backgroundColor = "blue";
+        if(computerMove !== null && computerMove !== undefined){
+            let elementID = boardElements[computerMove - 1];
+            let computerMoveElement = document.getElementById(elementID);
+            computerMoveElement.style.backgroundColor = "blue";
+        }
+        updateGameStatus();
     })
+
 
 };
 
