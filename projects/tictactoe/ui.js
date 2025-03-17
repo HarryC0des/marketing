@@ -43,7 +43,7 @@ function updateUI(){
     
     topLeft.addEventListener("click", function(){
         console.log("Top Left Selected");
-        topLeft.style.backgroundColor = "red";
+        topLeft.textContent = "X";
         let playerMove = "A";
         console.log("playerMove logged");
         let computerMove = playGame(playerMove);
@@ -52,97 +52,97 @@ function updateUI(){
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
 
         updateGameStatus();
     });
 
     topMiddle.addEventListener("click", function(){
-        topMiddle.style.backgroundColor = "red";
+        topMiddle.textContent = "X";
         let playerMove = "B";
         let computerMove = playGame(playerMove);
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
         updateGameStatus();
     });
     topRight.addEventListener("click", function(){
-        topRight.style.backgroundColor = "red";
+        topRight.textContent = "X";
         let playerMove = "C";
         let computerMove = playGame(playerMove);
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
         updateGameStatus();
         });
     midLeft.addEventListener("click", function(){
-        midLeft.style.backgroundColor = "red";
+        midLeft.textContent = "X";
         let playerMove = "D";        
         let computerMove = playGame(playerMove);
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
         updateGameStatus();
     });
     midMiddle.addEventListener("click", function(){
-        midMiddle.style.backgroundColor = "red";
+        midMiddle.textContent = "X";
         let playerMove = "E";
         let computerMove = playGame(playerMove);
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
         updateGameStatus();
     });
     midRight.addEventListener("click", function(){
-        midRight.style.backgroundColor = "red";
+        midRight.textContent = "X";
         let playerMove = "F";
         let computerMove = playGame(playerMove);
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
         updateGameStatus();
     });
     botLeft.addEventListener("click",function(){
-        botLeft.style.backgroundColor = "red";
+        botLeft.textContent = "X";
         let playerMove = "G";
         let computerMove = playGame(playerMove);
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
         updateGameStatus();
     });
     botMiddle.addEventListener("click", function(){
-        botMiddle.style.backgroundColor = "red";
+        botMiddle.textContent = "X";
         let playerMove = "H";
         let computerMove = playGame(playerMove);
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
         updateGameStatus();
     });
     botRight.addEventListener("click", function(){
-        botRight.style.backgroundColor = "red";
+        botRight.textContent = "X";
         let playerMove = "I";
         let computerMove = playGame(playerMove);
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.style.backgroundColor = "blue";
+            computerMoveElement.textContent = "O";
         }
         updateGameStatus();
     })
