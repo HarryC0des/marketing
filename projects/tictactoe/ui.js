@@ -38,114 +38,242 @@ function updateUI(){
             status.textContent = "It's a Draw!";
             startOverBtn.style.display = "";
         } else status.textContent = "";
+
+        return gameStatus;
     }
 
     
     topLeft.addEventListener("click", function(){
         console.log("Top Left Selected");
-        topLeft.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+
+        topLeft.appendChild(playText);
         let playerMove = "A";
         console.log("playerMove logged");
         let computerMove = playGame(playerMove);
         console.log("computer move logged");
 
+        updateGameStatus();
+
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
 
-        updateGameStatus();
+        updateGameStatus();},500)
     });
 
     topMiddle.addEventListener("click", function(){
-        topMiddle.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+        topMiddle.appendChild(playText);
         let playerMove = "B";
         let computerMove = playGame(playerMove);
+
+        updateGameStatus();
+
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
-        updateGameStatus();
+
+        updateGameStatus();},500)
     });
+
     topRight.addEventListener("click", function(){
-        topRight.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+        topRight.appendChild(playText);
         let playerMove = "C";
         let computerMove = playGame(playerMove);
+
+        updateGameStatus();
+
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
-        updateGameStatus();
-        });
+
+        updateGameStatus();},500)
+    });
     midLeft.addEventListener("click", function(){
-        midLeft.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+        midLeft.appendChild(playText);
         let playerMove = "D";        
         let computerMove = playGame(playerMove);
+
+        updateGameStatus();
+
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
-        updateGameStatus();
+
+        updateGameStatus();},500)
     });
     midMiddle.addEventListener("click", function(){
-        midMiddle.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+        midMiddle.appendChild(playText);
         let playerMove = "E";
         let computerMove = playGame(playerMove);
+
+        updateGameStatus();
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
-        updateGameStatus();
+
+        updateGameStatus();},500)
     });
+
     midRight.addEventListener("click", function(){
-        midRight.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+        midRight.appendChild(playText);
         let playerMove = "F";
         let computerMove = playGame(playerMove);
+
+        updateGameStatus();
+
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
-        updateGameStatus();
+
+        updateGameStatus();},500)
     });
     botLeft.addEventListener("click",function(){
-        botLeft.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+        botLeft.appendChild(playText);
         let playerMove = "G";
         let computerMove = playGame(playerMove);
+
+        updateGameStatus();
+
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
-        updateGameStatus();
+
+        updateGameStatus();},500)
     });
     botMiddle.addEventListener("click", function(){
-        botMiddle.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+        botMiddle.appendChild(playText);
         let playerMove = "H";
         let computerMove = playGame(playerMove);
+
+        updateGameStatus();
+
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
-        updateGameStatus();
+
+        updateGameStatus();},500)
     });
     botRight.addEventListener("click", function(){
-        botRight.textContent = "X";
+        let playText = document.createElement("p");
+        playText.textContent = "X";
+        botRight.appendChild(playText);
         let playerMove = "I";
         let computerMove = playGame(playerMove);
+
+        updateGameStatus();
+
+        setTimeout(() => {
+            if(gameStatus === "player"){
+                console.log("The game should stop right now")
+                return;
+            }
+
         if(computerMove !== null && computerMove !== undefined){
             let elementID = boardElements[computerMove - 1];
             let computerMoveElement = document.getElementById(elementID);
-            computerMoveElement.textContent = "O";
+            let computerText = document.createElement("p");
+            computerText.textContent = "O";
+            computerMoveElement.appendChild(computerText);
         }
-        updateGameStatus();
-    })
+
+        updateGameStatus();},500)
+    });
 
 
 };

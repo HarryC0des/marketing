@@ -633,6 +633,11 @@ ul#taskList{
     place-items: center;
 }
 
+.grid p{
+    padding: 20px;
+    margin: 0;
+}
+
 #gameStatus{
     width: 300px;
     margin: auto;
