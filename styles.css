@@ -284,19 +284,24 @@ footer nav a:hover {
     border-color: blue; /* Change border color on hover */
 }
 
-.services-container{
+.services-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 25px;
+    gap: 25px;
 }
 
-.services-container-gray{
-    background-color: rgb(217, 217, 217);
+.services-item {
+    flex: 1 1 200px; /* all items become equal-width blocks */
+    max-width: 200px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* keeps text right-aligned */
 }
 
-.services-container-gray img{
-    padding-top: 10px;
+.services-text{
+    text-align: right
 }
 
 .services-container:last-of-type{
@@ -414,6 +419,10 @@ textarea {
 
     .services-container{
         flex-direction: column;
+    }
+
+    .services-text{
+        text-align: center;
     }
 
     .nav {
