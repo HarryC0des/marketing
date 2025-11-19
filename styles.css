@@ -317,6 +317,13 @@ footer nav a:hover {
     text-align: center;
 }
 
+ .services-text{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
 .services-item h3{
     text-transform: uppercase;
     font-weight: 600;
