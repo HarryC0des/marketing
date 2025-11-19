@@ -300,10 +300,6 @@ footer nav a:hover {
     align-items: flex-end; /* keeps text right-aligned */
 }
 
-.services-text{
-    text-align: right
-}
-
 .services-container:last-of-type{
     margin-bottom: 25px;
 }
@@ -328,7 +324,6 @@ footer nav a:hover {
 
 .services-item p{
     margin-top: 10px;
-    max-width: 175px;
 }
 
 .CTA-footer{
