@@ -356,6 +356,8 @@ footer nav a:hover {
 @media (max-width: 600px){
     .services-container{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .services-item p{
