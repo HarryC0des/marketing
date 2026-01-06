@@ -6,13 +6,13 @@ export default function App() {
     {
       label: "LinkedIn",
       subtext: "Professional background and experience",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/harry-wahl-writes/",
       icon: Linkedin,
     },
     {
       label: "GitHub",
       subtext: "Code, projects, and open source contributions",
-      href: "https://github.com",
+      href: "https://github.com/HarryC0des",
       icon: Github,
     },
     {
@@ -24,13 +24,13 @@ export default function App() {
     {
       label: "What I'm Reading",
       subtext: "Current books and articles",
-      href: "https://example.com/reading",
+      href: "https://www.goodreads.com/user/show/106667989?ref=nav_profile_l",
       icon: BookOpen,
     },
     {
       label: "What I'm Watching",
-      subtext: "Films, shows, and visual media",
-      href: "https://example.com/watching",
+      subtext: "Follow me on Letterboxd for movie musings",
+      href: "https://letterboxd.com/HG0es2TheM0vies/",
       icon: Video,
     },
   ];
