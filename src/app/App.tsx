@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, Twitter, Pencil, Box, BookOpen, Video } from "lucide-react";
 import { LinkCard } from "./components/LinkCard";
+import headshot from "../assets/headshotharry.png";
 
 export default function App() {
   const links = [
@@ -63,7 +64,7 @@ export default function App() {
             <div className="absolute -inset-2 bg-gradient-to-r from-white/20 to-white/5 rounded-full blur-md group-hover:blur-lg transition-all duration-500"></div>
             <div className="absolute -inset-1 border border-white/20 rounded-full"></div>
             <img
-              src="https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDF8fHx8MTc2NzU1Nzg2MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src={headshot}
               alt="Profile"
               className="relative w-32 h-32 rounded-full object-cover border-2 border-white/10 grayscale group-hover:grayscale-0 transition-all duration-500"
             />
@@ -76,10 +77,10 @@ export default function App() {
             <div className="h-px w-12 bg-gradient-to-r from-transparent via-white/50 to-transparent"></div>
           </div>
           <h1 className="text-white mb-3 tracking-tight">
-            Alex Rivera
+            Harry Wahl
           </h1>
           <p className="text-white/60 tracking-wide">
-            Designer, developer, and occasional writer
+            Marketer, amateur developer, and occasional writer
           </p>
         </header>
 
