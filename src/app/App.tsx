@@ -87,7 +87,7 @@ export default function App() {
         {/* Intro Section */}
         <div className="mb-16 text-center max-w-xl mx-auto">
           <p className="text-white/70 leading-relaxed">
-            I build products at the intersection of design and code. Currently exploring how we interact with digital tools and occasionally writing about craft, process, and the web.
+            Experienced marketer with a passion for technology and storytelling. I blend creativity with data-driven strategies to craft compelling narratives that resonate. When I'm not strategizing campaigns, you'll find me coding side projects or penning down my thoughts on various topics.
           </p>
         </div>
 
@@ -109,10 +109,10 @@ export default function App() {
           <div className="flex items-center justify-center gap-2 text-white/50 mb-3">
             <Mail size={16} strokeWidth={1.5} />
             <a
-              href="mailto:hello@example.com"
+              href="mailto:contact@harrywahl.com"
               className="hover:text-white transition-colors duration-300"
             >
-              hello@example.com
+              contact@harrywahl.com
             </a>
           </div>
           <p className="text-white/30 mt-4">
